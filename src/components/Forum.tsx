@@ -56,7 +56,7 @@ const Forum: React.FC = () => {
                         <label htmlFor="filter">Search:</label>
                         <input type="text" placeholder="Id here..." id="filter" onChange={(e) => {
                             { if (e.target.value !== '')
-                                setDisplayList(feedbackList.filter((feedback) => feedback.employee_id.includes(e.target.value)));
+                                setDisplayList(feedbackList.filter((feedback) => feedback.employee_id.toLowerCase().includes(e.target.value.toLowerCase())));
                                 else setDisplayList(feedbackList);
                             }
                         }}/>
