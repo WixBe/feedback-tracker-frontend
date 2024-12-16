@@ -22,7 +22,7 @@ const Forum: React.FC = () => {
         try {
             const response = await axios.get('http://localhost:3000/feedback/');
             setFeedbackList(response.data.reverse());
-            setDisplayList(response.data.reverse());
+            setDisplayList(response.data);
             // feedbackList.map((feedback) => {
                 //     const formattedDate = feedback.submittedAt.toLocaleDateString('en-US', { 
                     //         year: 'numeric', 
