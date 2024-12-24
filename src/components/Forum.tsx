@@ -7,7 +7,7 @@ const Forum: React.FC = () => {
 
     interface Feedback {
         _id: string;
-        employee_id: string;
+        recepient_id: string;
         feedbackText: string;
         rating: number;
         submittedAt: Date;
@@ -56,7 +56,7 @@ const Forum: React.FC = () => {
                         <label htmlFor="filter">Search:</label>
                         <input type="text" placeholder="Id here..." id="filter" onChange={(e) => {
                             { if (e.target.value !== '')
-                                setDisplayList(feedbackList.filter((feedback) => feedback.employee_id.toLowerCase().includes(e.target.value.toLowerCase())));
+                                setDisplayList(feedbackList.filter((feedback) => feedback.recepient_id.toLowerCase().includes(e.target.value.toLowerCase())));
                                 else setDisplayList(feedbackList);
                             }
                         }}/>
@@ -66,13 +66,13 @@ const Forum: React.FC = () => {
                 <ul>
                     {displayList.map((feedback) => (
                         <li key={feedback._id}>
-                            {/* <p><strong>Employee ID:</strong> {feedback.employee_id || "Anonymous"}</p>
+                            {/* <p><strong>Employee ID:</strong> {feedback.recepient_id || "Anonymous"}</p>
                             <p><strong>Feedback:</strong> {feedback.feedbackText}</p>
                             <p><strong>Rating:</strong> {feedback.rating}</p> */}
                         
                             <div className="card">
                                 <div className="author">
-                                    <strong>Review for</strong> {feedback.employee_id}
+                                    <strong>Review for</strong> {feedback.recepient_id}
                                 </div>
     
                                 <div className="infos">

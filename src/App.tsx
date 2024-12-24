@@ -1,20 +1,18 @@
-import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
-import FeedbackForm from './components/FeedbackForm'
-import Header from './components/Header'
-import Forum from './components/Forum';
+import LoginForm from './components/login/loginForm'
+import LandingPage from './components/landing/landing'
 
 function App() {
 
-  const [ activeTab, setActiveTab ] = useState('post');
-
   return (
-    <>
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-      <div className="board">
-        { activeTab === 'post' ? <FeedbackForm /> : <Forum /> }
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<LoginForm />} />
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/landing" element={<LandingPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
