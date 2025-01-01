@@ -8,10 +8,12 @@ const FeedbackForm: React.FC = () => {
     const [rating, setRating] = useState(5);
     const [employeeId, setEmployeeId] = useState('');
 
+    const userId = localStorage.getItem('userId');
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/feedback/', {feedbackText: feedback, rating: rating, employee_id: employeeId});
+            await axios.post('http://localhost:3000/feedback/', {user_id: userId, feedbackText: feedback, rating: rating, recepient_id: employeeId});
             alert('Feedback submitted successfully!');
             setEmployeeId('');
             setFeedback('');

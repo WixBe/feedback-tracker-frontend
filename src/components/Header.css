@@ -4,6 +4,16 @@
     justify-content: center;   
 }
 
+.logout {
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+p {
+  margin: 1rem;
+}
+
 span {
     cursor: pointer;
     color: rgba(255, 255, 255, 0.6);

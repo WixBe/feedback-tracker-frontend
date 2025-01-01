@@ -31,8 +31,15 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
     //     setActiveTab(clickedId);
     // }
 
+    const handleLogout = () => {
+        // localStorage.removeItem('token');
+        localStorage.removeItem('userName');
+        window.location.href = '/';
+    }
+
     return (
         <header>
+            <p className='logout' onClick={handleLogout}>Logout</p>
         <nav>
             <span
             onClick={() => setActiveTab('post')}
@@ -58,6 +65,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
                 </label>
             </div> */}
         </nav>
+            <p className='profile'><strong>User :</strong> { localStorage.getItem('userName') }</p>
         </header>
     )
 }
