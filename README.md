@@ -1,39 +1,41 @@
-# Feedback Tracker Backend
+# Feedback Tracker Frontend
 
 
 ## Description
 
-The **Feedback Tracker Backend** is the server-side component of the Feedback Tracker platform. Developed entirely in TypeScript, it provides RESTful APIs for managing feedback data and supports the frontend application ([Feedback Tracker Frontend](https://github.com/WixBe/feedback-tracker-frontend)).
+The **Feedback Tracker Frontend** is the user-facing web application of the Feedback Tracker platform. Built using TypeScript and modern web technologies, it allows users to submit, view, and track feedback seamlessly. This frontend application depends on the backend service ([Feedback Tracker Backend](https://github.com/WixBe/feedback-tracker-backend)) for data processing and storage.
 
 ## Features
 
-- **TypeScript-Based**: Fully typed backend for increased code safety and maintainability.
-- **RESTful API**: Provides clean and efficient endpoints for seamless frontend integration.
-- **Secure and Scalable**: Designed to handle multiple requests and ensure data security.
-- **Database Integration**: Manages persistent storage for feedback data.
+- **Interactive UI**: Intuitive and responsive interface for submitting and managing feedback.
+- **TypeScript-Based**: Strongly typed code for improved reliability and maintainability.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **REST API Integration**: Communicates with the backend to provide real-time functionality.
 
 ## Technology Stack
 
-This repository is written entirely in:
-- **TypeScript** (100%)
+This repository is predominantly written in:
+- **TypeScript** (63.5%)
+- **CSS** (31.7%)
+- **JavaScript** (3.4%)
+- **HTML** (1.4%)
 
 ## Prerequisites
 
 - Node.js version 14 or higher.
-- PostgreSQL or other compatible database system.
-- [Feedback Tracker Frontend](https://github.com/WixBe/feedback-tracker-frontend) to interact with this backend.
+- [Feedback Tracker Backend](https://github.com/WixBe/feedback-tracker-backend) set up and running.
 
 ## Installation
 
-To set up the backend locally, follow these steps:
+To set up the frontend locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/WixBe/feedback-tracker-backend.git
+   git clone https://github.com/WixBe/feedback-tracker-frontend.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd Postmeow-backend
+   cd feedback-tracker-frontend
    ```
 3. Install dependencies:
    ```bash
@@ -43,33 +45,25 @@ To set up the backend locally, follow these steps:
     - Create a .env file in the root directory.
     - Add the following variables:
     ```code
-    DATABASE_URL=postgresql://username:password@localhost:5432/postmeow
-    PORT=4000
+    REACT_APP_API_URL=http://localhost:4000
     ```
-5. Run database migrations:
-   ```bash
-   npm run migrate
-   ```
-6. Start the server:
+5. Start the server:
    ```bash
    npm run start
    ```
    
 ## Usage
 
-The server will be available at http://localhost:4000. Use tools like Postman or cURL to interact with the API.
+Visit http://localhost:3000 in your browser to interact with the application. Ensure that the backend server is running at http://localhost:4000.
 
 ## Directory Structure
 
 ```plaintext
 .
-├── src/                # Source code for the backend
-├── config/             # Configuration files
+├── src/                # Source code for the application
+├── public/             # Public assets
 ├── tests/              # Unit and integration tests
-├── docs/               # API documentation
-├── README.md           # Project documentation
-└── package.json        # Dependency and script management
+├── styles/             # CSS and styling files
+├── index.html          # Main HTML file
+└── README.md           # Project documentation
 ```
-
-## API Documentation
-For detailed API documentation, refer to the docs/ directory or access the Swagger UI (if available).
